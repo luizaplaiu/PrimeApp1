@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@model IList<int>
+
+
+<!DOCTYPE html>
+<html lang="en"
+
+<head>
+    <title>Prime</title>
+    <meta charset="utf-8" />
+
+
+
+    <style>
+
+        body {
+            background-color: #edeee8;
+            transition: background-color 1s linear;
+        }
+
+
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 30px 0;
+            box-sizing: border-box;
+        }
+
+        form {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+        }
+
+        .center {
+            padding: 70px 0;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        input[type=submit] {
+            background-color: #928475;
+            border: none;
+            color: white;
+            padding: 18px 36px;
+            text-decoration: none;
+            margin: 5px 4px;
+            cursor: pointer;
+        }
+
+        label {
+            color: black;
+            padding: 8px;
+            font-size: 16px;
+            transform: translate3d(0, 0, 0);
+            transition: all 0.2s ease-in-out;
+        }
+
+        p {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        ul {
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="center">
+        <h1>Generate the highest prime number equal or smaller than input value! </h1>
+        <br />
+        <form action="" method="post">
+
+            <p>
+                <label for="text1"> Number: </label>
+                <input type="text" name="text1" />
+
+            </p>
+
+            <p>
+                <input type="submit" value="Generate" />
+            </p>
+            <br />
+
+            <p>
+                <label>
+                    Result:  @foreach (var requested in Model)
+                    {
+                        @requested
+                    }
+                </label>
+            </p>
+
+
+        </form>
+    </div>
+</body>
+</html>
+
+
+
